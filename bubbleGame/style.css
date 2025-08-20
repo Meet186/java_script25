@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: brown;
+    padding: 30px;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.bubbleContainer{
+   display: flex;
+   margin: auto;
+   max-width: 50%;
+   padding: 15px;
+   flex-wrap: wrap;
+   gap: 15px;
+   justify-content: center;
+   align-items: center;
+}
+
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#overbox {
+    display: flex;
+    gap: 15rem;
+
+}
+
+#restart {
+    padding: 10px 10px;
+    background-color: brown;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+   
+    
+}

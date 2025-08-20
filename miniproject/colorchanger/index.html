@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer</title>
+</head>
+<style>
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin: 20px;
+        height: 40vh;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: none;
+    }
+
+    #currentcolor {
+        position: absolute;
+        border: 1px solid;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 107px;
+    }
+
+    h1 {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    #randomcolor_btn {
+        background-color: rgb(94, 181, 181);
+    }
+
+    input[type="text"] {
+        color: black;
+        background-color: aquamarine;
+        padding: 7px;
+        border: none;
+    }
+</style>
+
+<body>
+    <h1>Color changer</h1>
+    <div class="box">
+        <button id="randomcolor_btn">Random color</button>
+        <input type="text" placeholder="Entre a color" id="input_box">
+        <button id="sumbit_btn">Apply Color</button>
+    </div>
+    <div id="currentcolor"></div>
+</body>
+<script>
+    const random_Btn = document.getElementById("randomcolor_btn");
+    const input_Box = document.getElementById("input_box");
+    const sumbit_Btn = document.getElementById("sumbit_btn");
+    const color_Box = document.getElementById("currentcolor");
+
+    function generateRandomColor() {
+        let val = "123456789abcdef";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += val[Math.floor(Math.random() * val.length)];
+        }
+        return color;
+    }
+    function randomColour() {
+        random_Btn.addEventListener("click", () => {
+            document.body.style.backgroundColor = generateRandomColor();
+        });
+    }
+    function usergivenColour() {
+        sumbit_Btn.addEventListener("click", () => {
+            let userColour = input_Box.value;
+            document.body.style.backgroundColor = userColour;
+        })
+    }
+    function showColourName() {
+        const p = document.createElement("p");
+        if (!color_Box.contains(p)) {
+            color_Box.append(p);
+        }
+        document.addEventListener("click", function (event) {
+            if (event.target.tagName.toLowerCase() === "button") {
+                const bgColor = document.body.style.backgroundColor;
+                p.textContent = bgColor;
+                color_Box.appendChild(p);
+            }
+        });
+    }
+    showColourName()
+    usergivenColour()
+    randomColour()
+
+
+
+
+
+
+</script>
+
+</html>

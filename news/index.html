@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEWS</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" id="logo" onclick="reload()">
+                <img src="./images.png" alt="">
+            </a>
+        <div class="nav-links">
+            <ul class="flex">
+                <li class="hover-link nav-item" id="Health" onclick="onnavitem('Health')">Health</li>
+                <li class="hover-link nav-item" id="finance" onclick="onnavitem('finance')">Finance</li>
+                <li class="hover-link nav-item" id="Politics" onclick="onnavitem('Politics')">Politics</li>
+                <li class="hover-link nav-item" id="Sports" onclick="onnavitem('Sports')">Sports</li>
+            </ul>
+        </div>
+        <div class="serch-bar flex" >
+            <input  type="search" class="news-input" name="" id="serch-text" placeholder="e.g. Cricket">
+            <button id="serch-button" class="serch-button">Serch</button>
+        </div>
+    </div>
+    </nav>
+    <main>
+        <div class="cards-container container flex" id="cards-container" >
+           
+            
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="http://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 class="news-title" id="news-title">this is title</h3>
+                <h4 class="news-source" id="news-source">end gagte 26/11</h4>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam officia vel explicabo beatae ipsum, eligendi quos obcaecati deleniti incidunt officiis!</p>
+            </div>
+        </div>
+    </template>
+
+</body>
+<script src="./app.js"></script>
+</html>
