@@ -31,13 +31,11 @@ async function fetchData() {
             deleteData(obj.id);
 
         })
-
         editBtn.addEventListener("click", (event) => {
             editBtn.style.display = 'none';
             saveBtn.style.display = 'inline';
             paraText.style.display = 'none';
             editInput.style.display = 'inline';
-
         })
         saveBtn.addEventListener("click", async (event) => {
             let newTextValue = editInput.value;
@@ -66,12 +64,8 @@ async function postData() {
         fetchData();
         taskInput.value = ''; // clear the input value . 
     }
-
 }
-
 async function updateData(id, value) {
-
-
     let objData = {
         text: value.trim()
     }
@@ -86,11 +80,8 @@ async function updateData(id, value) {
         fetchData();
         taskInput.value = ''; // clear the input value . 
     }
-    console.log(response);
-
-
+    // console.log(response);
 }
-
 async function deleteData(id) {
     let response = await fetch(`${API}/${id}`, {
         method: 'DELETE',
